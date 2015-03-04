@@ -1,14 +1,34 @@
 {
-   "config": {
-      "vendor-dir": "packages/"
-    },
-   "repositories": [
+    "name": "eventbrite/eventbrite",
+    "type": "library",
+    "description": "Eventbrite API PHP library",
+    "keywords": ["Eventbrite","API","event","ticket"],
+    "homepage": "https://github.com/apimatic/Eventbrite-SDK-PHP",
+    "license": "MIT",
+    "authors": [
         {
-            "type": "vcs",
-            "url": "https://github.com/apimatic/unirest-php"
+            "name": "Zeeshan Ejaz Bhatti",
+            "email": "zeeshanejaz@gmail.com",
+            "homepage": "https://github.com/zeeshanejaz",
+            "role": "Developer"
+        },
+        {
+            "name": "Ivan Dokov",
+            "email": "zeeshanejaz@gmail.com",
+            "homepage": "http://dokov.bg",
+            "role": "Developer"
         }
     ],
     "require": {
-        "apimatic/unirest-php" : "dev-master"
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "mashape/unirest-php": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eventbrite\\": "src/"
+        }
     }
 }
