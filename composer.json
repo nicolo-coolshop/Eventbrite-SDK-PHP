@@ -1,5 +1,5 @@
 {
-    "name": "eventbrite/eventbrite",
+    "name": "apimatic/eventbrite",
     "type": "library",
     "description": "Eventbrite API PHP library",
     "keywords": ["Eventbrite","API","event","ticket"],
