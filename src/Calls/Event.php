@@ -59,35 +59,35 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithQueryParameters($queryBuilder, array(
             'q'                         => $this->val($options, 'search'),
-            'date_modified.range_start' => $this->val($options, 'dateModifiedRangeStart'),
-            'date_created.keyword'      => $this->val($options, 'dateCreatedKeyword'),
-            'date_created.range_end'    => $this->val($options, 'dateCreatedRangeEnd'),
-            'date_created.range_start'  => $this->val($options, 'dateCreatedRangeStart'),
-            'start_date.keyword'        => $this->val($options, 'startDateKeyword'),
-            'start_date.range_end'      => $this->val($options, 'startDateRangeEnd'),
-            'start_date.range_start'    => $this->val($options, 'startDateRangeStart'),
-            'formats'                   => $this->val($options, 'formats'),
-            'categories'                => $this->val($options, 'categories'),
-            'tracking_code'             => $this->val($options, 'trackingCode'),
-            'date_modified.range_end'   => $this->val($options, 'dateModifiedRangeEnd'),
-            'user.id'                   => $this->val($options, 'userId'),
-            'venue.country'             => $this->val($options, 'venueCountry'),
-            'venue.region'              => $this->val($options, 'venueRegion'),
-            'venue.city'                => $this->val($options, 'venueCity'),
+//            'date_modified.range_start' => $this->val($options, 'dateModifiedRangeStart'),
+//            'date_created.keyword'      => $this->val($options, 'dateCreatedKeyword'),
+////            'date_created.range_end'    => $this->val($options, 'dateCreatedRangeEnd'),
+////            'date_created.range_start'  => $this->val($options, 'dateCreatedRangeStart'),
+//            'start_date.keyword'        => $this->val($options, 'startDateKeyword'),
+//            'start_date.range_end'      => $this->val($options, 'startDateRangeEnd'),
+//            'start_date.range_start'    => $this->val($options, 'startDateRangeStart'),
+//            'formats'                   => $this->val($options, 'formats'),
+//            'categories'                => $this->val($options, 'categories'),
+//            'tracking_code'             => $this->val($options, 'trackingCode'),
+//            'date_modified.range_end'   => $this->val($options, 'dateModifiedRangeEnd'),
+//            'user.id'                   => $this->val($options, 'userId'),
+//            'venue.country'             => $this->val($options, 'venueCountry'),
+//            'venue.region'              => $this->val($options, 'venueRegion'),
+//            'venue.city'                => $this->val($options, 'venueCity'),
             'location.within'           => $this->val($options, 'locationWithin'),
-            'location.longitude'        => $this->val($options, 'locationLongitude'),
-            'location.latitude'         => $this->val($options, 'locationLatitude'),
+//            'location.longitude'        => $this->val($options, 'locationLongitude'),
+//            'location.latitude'         => $this->val($options, 'locationLatitude'),
             'location.address'          => $this->val($options, 'locationAddress'),
-            'popular'                   => $this->val($options, 'popular'),
+//            'popular'                   => $this->val($options, 'popular'),
             'sort_by'                   => $this->val($options, 'sortBy'),
-            'since_id'                  => $this->val($options, 'sinceId'),
-            'organizer.id'              => $this->val($options, 'organizerId'),
-            'date_modified.keyword'     => $this->val($options, 'dateModifiedKeyword'),
+//            'since_id'                  => $this->val($options, 'sinceId'),
+//            'organizer.id'              => $this->val($options, 'organizerId'),
+//            'date_modified.keyword'     => $this->val($options, 'dateModifiedKeyword'),
+            'token'     => Configuration::token(),
         ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
-
         //prepare headers
         $headers = array(
             'User-Agent' => 'APIMATIC 2.0',
@@ -157,7 +157,12 @@ class Event
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
             'Ticket Class ID' => $ticketClassID,
-            ));
+        ));
+
+
+        APIHelper::appendUrlWithQueryParameters($queryBuilder, array(
+            'token' => Configuration::token(),
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -201,7 +206,7 @@ class Event
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
             'Ticket Class ID' => $ticketClassID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -309,7 +314,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -350,7 +355,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -386,7 +391,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -422,7 +427,7 @@ class Event
         //process required query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -462,7 +467,7 @@ class Event
         //process required query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //process optional query parameters
         if ($status) {
@@ -518,7 +523,7 @@ class Event
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
             'Attendee ID' => $attendeeID,
-            ));
+        ));
 
         //process optional query parameters
         APIHelper::appendUrlWithQueryParameters($queryBuilder, array(
@@ -566,7 +571,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //process optional query parameters
         if ($status) {
@@ -617,7 +622,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -658,7 +663,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -732,7 +737,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -773,7 +778,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -811,7 +816,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -847,7 +852,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -886,7 +891,7 @@ class Event
         //process optional query parameters
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
@@ -967,7 +972,7 @@ class Event
         APIHelper::appendUrlWithTemplateParameters($queryBuilder, array(
             'Event ID' => $eventID,
             'Team ID' => $teamID,
-            ));
+        ));
 
         //validate and preprocess url
         $queryUrl = APIHelper::cleanUrl($queryBuilder);
