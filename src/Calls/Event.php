@@ -67,7 +67,7 @@ class Event
 //            'start_date.range_end'      => $this->val($options, 'startDateRangeEnd'),
 //            'start_date.range_start'    => $this->val($options, 'startDateRangeStart'),
 //            'formats'                   => $this->val($options, 'formats'),
-//            'categories'                => $this->val($options, 'categories'),
+            'categories'                => $this->val($options, 'categories'),
 //            'tracking_code'             => $this->val($options, 'trackingCode'),
 //            'date_modified.range_end'   => $this->val($options, 'dateModifiedRangeEnd'),
 //            'user.id'                   => $this->val($options, 'userId'),
